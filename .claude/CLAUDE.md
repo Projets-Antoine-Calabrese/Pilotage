@@ -8,17 +8,20 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
 |---|---|---|
 | Design, Dev, Pilotage, Creatif | Boîtes à outils de Claude (compétences, sous-agents) | **Publiques** : aucune donnée personnelle, jamais |
 | Modele-Projet | Moule (template) de tout nouveau projet | Privé |
-| Finances, Sport-Sante, futurs projets | Applications | Privés |
+| Voyage, Finances, Sport-Sante, futurs projets | Applications | Privés |
 | .github-private | Page d'accueil de l'organisation (`profile/README.md`) | Privé — Claude ne peut pas y écrire : donner le texte à Antoine |
 
 - Catalogues en ligne : composants `Design/references/composants.md`, bibliothèques créatives `Creatif/references/bibliotheques.md`, sources de données `Pilotage/references/donnees.md`, veille et sources écartées `Pilotage/references/veille.md` (lisibles sur GitHub, dépôts publics).
 - Environnement à utiliser : **AntoCala** (pas « Default », qui ne charge pas les boîtes). Si `~/.claude/skills/design-taste` est absent, le dire à Antoine.
-- Une conversation par projet. Les conversations de configuration et de maintenance vont dans la section « Gestion Claude Code ».
-- Conversation « Mise à jour et amélioration » : chaque lundi 6 h 47, met à jour les boîtes, propose les nouveautés, vérifie la sécurité et les bugs de chaque application (corrections uniquement en PR brouillon, à valider par Antoine) et signale les conversations en attente. Pour ajouter ou retirer un outil, passer par elle (ou par la conversation « Gestion des projets / Design »), pas depuis un projet.
+- Une conversation par projet. Organisation dans la section « Gestion Claude Code » :
+  - « Cadrage utilisation Claude Code » : réglages et organisation d'ensemble (boîtes, environnement, consignes) ;
+  - « Mise à jour et amélioration hebdo » : maintenance automatique du lundi ;
+  - « Template des nouveaux projets » : lanceur de projets ; les conversations des applications (Voyage, Finances, Sport-Santé…) sont créées par lui et regroupées sous lui.
+- Conversation « Mise à jour et amélioration hebdo » : chaque lundi 6 h 47, met à jour les boîtes, propose les nouveautés, vérifie la sécurité et les bugs de chaque application (corrections uniquement en PR brouillon, à valider par Antoine) et signale les conversations en attente. Pour ajouter ou retirer un outil, passer par elle (ou par la conversation « Cadrage utilisation Claude Code »), pas depuis un projet.
 - Les boîtes sont rafraîchies au début de chaque conversation (routine `~/.claude/hooks/outils-demarrage.sh`) : ne pas la modifier sans l'accord d'Antoine.
 
 ## Démarrer un nouveau projet
-Porte d'entrée : la conversation **« Nouveau projet »** (section « Gestion Claude Code »). Antoine y écrit son idée ; elle lui donne le lien GitHub pré-rempli, puis crée la conversation du projet déjà branchée au dépôt. Si Antoine demande un nouveau projet ailleurs, l'orienter vers elle. Étapes qu'elle applique :
+Porte d'entrée : la conversation **« Template des nouveaux projets »** (section « Gestion Claude Code »). Antoine y écrit son idée ; elle lui donne le lien GitHub pré-rempli, puis crée la conversation du projet déjà branchée au dépôt. Si Antoine demande un nouveau projet ailleurs, l'orienter vers elle. Étapes qu'elle applique :
 1. Antoine crée le dépôt depuis le moule : Modele-Projet → **Use this template** → **Create a new repository** → nom → **Private** → **Create repository**. (Claude ne peut pas créer de dépôt ni modifier les réglages GitHub : description, visibilité, case « Template ».)
 2. Claude branche le dépôt dans la conversation, puis remplit `CLAUDE.md` du projet avec Antoine (objectif, public, « fini » quand…).
 3. Pile par défaut : page HTML autonome, sans étape de build, données en `localStorage` + export/import JSON, bibliothèques via CDN en version épinglée.
