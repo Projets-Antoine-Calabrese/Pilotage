@@ -18,6 +18,7 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
 - Les boîtes sont rafraîchies au début de chaque conversation (routine `~/.claude/hooks/outils-demarrage.sh`) : ne pas la modifier sans l'accord d'Antoine.
 
 ## Démarrer un nouveau projet
+Porte d'entrée : la conversation **« Nouveau projet »** (section « Gestion Claude Code »). Antoine y écrit son idée ; elle lui donne le lien GitHub pré-rempli, puis crée la conversation du projet déjà branchée au dépôt. Si Antoine demande un nouveau projet ailleurs, l'orienter vers elle. Étapes qu'elle applique :
 1. Antoine crée le dépôt depuis le moule : Modele-Projet → **Use this template** → **Create a new repository** → nom → **Private** → **Create repository**. (Claude ne peut pas créer de dépôt ni modifier les réglages GitHub : description, visibilité, case « Template ».)
 2. Claude branche le dépôt dans la conversation, puis remplit `CLAUDE.md` du projet avec Antoine (objectif, public, « fini » quand…).
 3. Pile par défaut : page HTML autonome, sans étape de build, données en `localStorage` + export/import JSON, bibliothèques via CDN en version épinglée.
