@@ -7,5 +7,18 @@
       "Bash(bash /home/user/creatif/scripts/sync.sh)",
       "Bash(bash /home/user/modele-projet/scripts/maj-outils.sh)"
     ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$HOME/.claude/hooks/outils-demarrage.sh\"",
+            "timeout": 180
+          }
+        ]
+      }
+    ]
   }
 }
