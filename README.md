@@ -42,3 +42,8 @@ Règle pour toute nouvelle source : même vérification avant de l'ajouter à `s
 
 ## Environnement cloud
 `environnement/script-demarrage-AntoCala.sh` : bloc à coller dans le script de démarrage (Setup script) de l'environnement **AntoCala**. Il installe Design, Dev et Pilotage dans `~/.claude/` à chaque session, pour tous les projets.
+
+## Autorisations (`.claude/settings.json`)
+Ce fichier est recopié par le script de démarrage dans `~/.claude/settings.json` de **toutes** les conversations AntoCala.
+Il autorise uniquement les scripts de mise à jour des boîtes (`scripts/sync.sh` de Design, Dev, Pilotage, Creatif et `scripts/maj-outils.sh` de Modele-Projet), lancés à leur emplacement habituel, pour que la mise à jour du lundi ne soit pas bloquée.
+N'y ajouter que des autorisations précises et sans risque : elles s'appliquent partout.
