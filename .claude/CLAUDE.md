@@ -14,7 +14,8 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
 - Catalogues en ligne : composants `Design/references/composants.md`, bibliothèques créatives `Creatif/references/bibliotheques.md`, sources de données `Pilotage/references/donnees.md`, veille et sources écartées `Pilotage/references/veille.md` (lisibles sur GitHub, dépôts publics).
 - Environnement à utiliser : **AntoCala** (pas « Default », qui ne charge pas les boîtes). Si `~/.claude/skills/design-taste` est absent, le dire à Antoine.
 - Une conversation par projet. Les conversations de configuration et de maintenance vont dans la section « Gestion Claude Code ».
-- Conversation « Mise à jour et amélioration » : chaque lundi 6 h 47, met à jour les boîtes et propose les nouveautés. Pour ajouter ou retirer un outil, passer par elle (ou par la conversation « Gestion des projets / Design »), pas depuis un projet.
+- Conversation « Mise à jour et amélioration » : chaque lundi 6 h 47, met à jour les boîtes, propose les nouveautés, vérifie la sécurité et les bugs de chaque application (corrections uniquement en PR brouillon, à valider par Antoine) et signale les conversations en attente. Pour ajouter ou retirer un outil, passer par elle (ou par la conversation « Gestion des projets / Design »), pas depuis un projet.
+- Les boîtes sont rafraîchies au début de chaque conversation (routine `~/.claude/hooks/outils-demarrage.sh`) : ne pas la modifier sans l'accord d'Antoine.
 
 ## Démarrer un nouveau projet
 1. Antoine crée le dépôt depuis le moule : Modele-Projet → **Use this template** → **Create a new repository** → nom → **Private** → **Create repository**. (Claude ne peut pas créer de dépôt ni modifier les réglages GitHub : description, visibilité, case « Template ».)

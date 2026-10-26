@@ -41,7 +41,8 @@ Règle pour toute nouvelle source : même vérification avant de l'ajouter à `s
 `bash scripts/sync.sh` puis commit. Ne pas écraser `.claude/CONNECTORS.md` (non synchronisé).
 
 ## Environnement cloud
-`environnement/script-demarrage-AntoCala.sh` : bloc à coller dans le script de démarrage (Setup script) de l'environnement **AntoCala**. Il installe Design, Dev et Pilotage dans `~/.claude/` à chaque session, pour tous les projets.
+- `environnement/script-demarrage-AntoCala.sh` : copie de référence du script de démarrage (« Script de configuration ») de l'environnement **AntoCala** (version 2). Il installe Design, Dev, Pilotage et Creatif dans `~/.claude/`. L'environnement **met en cache** son résultat : il ne le relance que si le texte du script change.
+- `.claude/hooks/outils-demarrage.sh` : routine lancée au début de **chaque** conversation cloud (déclarée dans `.claude/settings.json`). Elle récupère la dernière version des 4 boîtes, pour que les mises à jour du lundi arrivent sans toucher au script de démarrage. Écrite à la main par Antoine : ne la modifier qu'avec son accord.
 
 ## Consignes globales (`.claude/CLAUDE.md`)
 Fiche recopiée par le script de démarrage dans `~/.claude/CLAUDE.md` : Claude la lit au début de **chaque** conversation AntoCala.
@@ -50,5 +51,5 @@ Elle décrit l'organisation, le démarrage d'un projet, le déroulé de travail,
 
 ## Autorisations (`.claude/settings.json`)
 Ce fichier est recopié par le script de démarrage dans `~/.claude/settings.json` de **toutes** les conversations AntoCala.
-Il autorise uniquement les scripts de mise à jour des boîtes (`scripts/sync.sh` de Design, Dev, Pilotage, Creatif et `scripts/maj-outils.sh` de Modele-Projet), lancés à leur emplacement habituel, pour que la mise à jour du lundi ne soit pas bloquée.
+Il déclare la routine de démarrage (`hooks` → `SessionStart`) et autorise uniquement les scripts de mise à jour des boîtes (`scripts/sync.sh` de Design, Dev, Pilotage, Creatif et `scripts/maj-outils.sh` de Modele-Projet), lancés à leur emplacement habituel, pour que la mise à jour du lundi ne soit pas bloquée.
 N'y ajouter que des autorisations précises et sans risque : elles s'appliquent partout.
