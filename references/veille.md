@@ -28,3 +28,7 @@
 | remotion-dev/skills, ui-layouts/cursify | Pas de licence déclarée |
 | makecindy/cindy | Agent concurrent, pas un outil pour Claude |
 | Catalogues non vérifiés (ClawHub, skills.sh…) | Taux élevé de compétences malveillantes signalé par Snyk (2026) |
+| anthropics/skills (web-artifacts-builder) | Installe des paquets npm et une archive opaque (.tar.gz) ; pile React/Vite inutile pour nos pages HTML autonomes (écarté le 26/10/26) |
+| anthropics/skills (discernment-nudge, academy-guide) | Ajoutent des questions ou des liens de formation à chaque réponse : contraire au besoin de réponses brèves (26/10/26) |
+| greensock/gsap-skills (gsap-react) | Nos projets n'utilisent pas React (26/10/26) |
+| vercel-labs/agent-skills (writing-guidelines, react-view-transitions) | Doublon d'avoid-ai-writing / spécifique React (26/10/26) |
