@@ -1,0 +1,13 @@
+# dépôt source | dossier dans la source | destination | éléments (* = tout ; a=>b renomme) | mode (vide = automatique, manuel = seulement sur demande /nom)
+anthropics/knowledge-work-plugins | product-management/skills | .claude/skills | write-spec product-brainstorming roadmap-update metrics-review synthesize-research
+anthropics/knowledge-work-plugins | productivity/skills | .claude/skills | task-management memory-management
+anthropics/knowledge-work-plugins | productivity/skills | .claude/skills/task-management | dashboard.html
+anthropics/knowledge-work-plugins | data/skills | .claude/skills | analyze explore-data statistical-analysis validate-data build-dashboard
+anthropics/claude-plugins-official | plugins/project-artifact/skills | .claude/skills | project-artifact
+wshobson/agents | plugins/before-you-build/skills | .claude/skills | before-you-build
+wshobson/agents | plugins/quantitative-trading/skills | .claude/skills | risk-metrics-calculation
+msitarzewski/agency-agents | product | .claude/agents | product-manager product-sprint-prioritizer product-feedback-synthesizer product-behavioral-nudge-engine
+msitarzewski/agency-agents | project-management | .claude/agents | project-manager-senior project-management-experiment-tracker
+msitarzewski/agency-agents | finance | .claude/agents | finance-financial-analyst finance-tax-strategist finance-investment-researcher finance-fpa-analyst
+msitarzewski/agency-agents | specialized | .claude/agents | loan-officer-assistant real-estate-buyer-seller
+msitarzewski/agency-agents | healthcare | .claude/agents | healthcare-clinical-evidence-agent
