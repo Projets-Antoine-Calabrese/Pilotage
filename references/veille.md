@@ -32,3 +32,13 @@
 | anthropics/skills (discernment-nudge, academy-guide) | Ajoutent des questions ou des liens de formation à chaque réponse : contraire au besoin de réponses brèves (26/10/26) |
 | greensock/gsap-skills (gsap-react) | Nos projets n'utilisent pas React (26/10/26) |
 | vercel-labs/agent-skills (writing-guidelines, react-view-transitions) | Doublon d'avoid-ai-writing / spécifique React (26/10/26) |
+| anthropics/claude-plugins-official (security-guidance) | Un appel supplémentaire au modèle à chaque réponse : coûteux, redondant avec claude-security (veille du 27/10/26) |
+| kenryu42/claude-code-safety-net | Doublon partiel du mode automatique ; paquet npm |
+| gstack | Lourd, nombreux doublons |
+| grill-me | Doublon d'interview-me |
+| Playwright MCP | Doublon de webapp-testing |
+| excalidraw-diagram-skill, doc-coauthoring | Pas de licence déclarée |
+| second-opinion | Nécessite Codex ou Gemini |
+| ralph-loop | Boucles coûteuses en tokens |
+| Serena | Pensé pour de gros projets de code |
+| claude-code-ui-ux-skill | Doublon d'ui-ux-pro-max |
