@@ -2,8 +2,10 @@
 
 But : améliorer en continu les outils de Claude (code, développement, sécurité, pilotage, créativité, design, méthodes de travail), sans se limiter aux projets en cours. Lis d'abord `routines/commun.md`.
 
+0. **Boîte à choix** : la page « Boîte à choix Claude Code » est rattachée à cette conversation. Au début de chaque passage, ouvre-la (outil Artifact, `action: "open"`, url https://claude.ai/artifact/7mFmde6P9MSBeCoESm2Jm4) pour qu'Antoine la trouve ici.
+
 1. **Cases cochées** : dans la collection `choix`, pour chaque document `origine: veille` au statut `coche` : refais le contrôle (étape 4), installe (étape 5), puis passe-le en `fait`, ou en `echec` avec la raison dans `note`.
-2. **Recherche** (au plus 10 candidats examinés par jour, pour limiter les tokens) : nouveautés des 7 derniers jours et pépites plus anciennes. Sources : celles de `Pilotage/references/veille.md` (officielles Anthropic d'abord), recherche GitHub par sujet, annonces des éditeurs. Ignore ce qui est déjà installé (`SOURCES.md` des 4 boîtes), écarté (`veille.md`) ou présent dans `choix`.
+2. **Recherche** (au plus 15 candidats examinés par jour, pour limiter les tokens) : nouveautés des 7 derniers jours et pépites plus anciennes. Sources : celles de `Pilotage/references/veille.md` (officielles Anthropic d'abord), recherche GitHub par sujet, annonces des éditeurs. Ignore ce qui est déjà installé (`SOURCES.md` des 4 boîtes), écarté (`veille.md`) ou présent dans `choix`.
 3. **Tri** de chaque candidat :
    - **Je garde** (installation directe) : gain net, contrôle réussi **et** éditeur déjà approuvé, c'est-à-dire propriétaire d'un dépôt déjà présent dans un `scripts/sources.txt` des 4 boîtes.
    - **Option** (Antoine coche) : gain probable mais nouvel éditeur, doublon partiel ou intérêt discutable → document `choix` au statut `propose`, avec avantages et inconvénients.
