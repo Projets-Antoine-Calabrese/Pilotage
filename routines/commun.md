@@ -27,7 +27,8 @@ Validées par Antoine le 27/10/26. Ces fichiers (`routines/`, sur la branche mai
 - **Alerte grave** (piratage possible, secret exposé, accès ou auteur inconnu) : mets-la en tête du compte rendu et envoie une notification au téléphone d'Antoine (outil `PushNotification`, via ToolSearch) en une phrase, sans détail sensible.
 
 ## Renouvellement (au-delà d'environ 300 000 tokens)
-Si ta conversation a déjà été résumée automatiquement, ou si tu estimes qu'elle dépasse environ 300 000 tokens, à la fin du passage :
+Mesure : `get_session` sans identifiant → `external_metadata.context_usage.used_tokens`. Au-delà de 300 000 (ou si la conversation a déjà été résumée automatiquement), à la fin du passage :
+0. Vérifie `lineage.depth` et `lineage.limit` dans la même réponse : si `depth + 1 >= limit`, ne crée rien. Demande à Antoine, dans « 🙋 Besoin de toi », d'ouvrir lui-même une conversation neuve dans claude.ai/code (environnement AntoCala, dépôt Pilotage), avec ton texte de rôle complet à coller.
 1. Crée la conversation qui te remplace : `create_session`, même titre, environnement AntoCala (`env_01RAdD4YTGgQNUNL1mtyhYp4`), source `https://github.com/Projets-Antoine-Calabrese/Pilotage`, `append_system_prompt` = ton texte de rôle à l'identique, sans message de départ.
 2. Crée sa tâche programmée : `create_trigger` avec `persistent_session_id` = la nouvelle conversation, même nom, même horaire, même message, mêmes connecteurs (`initiation` : `human_schedule`).
 3. Désactive ta propre tâche (`update_trigger`, `enabled: false`) et note le changement dans `Suivi/journal.md`.
