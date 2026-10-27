@@ -1,0 +1,14 @@
+# Routine : Veille GitHub quotidienne (chaque matin)
+
+But : améliorer en continu les outils de Claude (code, développement, sécurité, pilotage, créativité, design, méthodes de travail), sans se limiter aux projets en cours. Lis d'abord `routines/commun.md`.
+
+1. **Cases cochées** : dans la collection `choix`, pour chaque document `origine: veille` au statut `coche` : refais le contrôle (étape 4), installe (étape 5), puis passe-le en `fait`, ou en `echec` avec la raison dans `note`.
+2. **Recherche** (au plus 10 candidats examinés par jour, pour limiter les tokens) : nouveautés des 7 derniers jours et pépites plus anciennes. Sources : celles de `Pilotage/references/veille.md` (officielles Anthropic d'abord), recherche GitHub par sujet, annonces des éditeurs. Ignore ce qui est déjà installé (`SOURCES.md` des 4 boîtes), écarté (`veille.md`) ou présent dans `choix`.
+3. **Tri** de chaque candidat :
+   - **Je garde** (installation directe) : gain net, contrôle réussi **et** éditeur déjà approuvé, c'est-à-dire propriétaire d'un dépôt déjà présent dans un `scripts/sources.txt` des 4 boîtes.
+   - **Option** (Antoine coche) : gain probable mais nouvel éditeur, doublon partiel ou intérêt discutable → document `choix` au statut `propose`, avec avantages et inconvénients.
+   - **J'écarte** : contrôle raté ou intérêt faible → ligne dans « Sources écartées » de `veille.md`, avec la raison.
+4. **Contrôle obligatoire** (sinon jamais d'installation) : licence libre (MIT, Apache 2.0, BSD, ISC, CC-BY, domaine public) ; auteur identifiable ; dernier commit de moins de 6 mois ; lecture complète des fichiers copiés (SKILL.md, agents, scripts) ; aucun hook ni exécution automatique ; aucun téléchargement de consignes sur Internet à chaque usage ; aucune demande de secret ou de mot de passe ; aucune consigne cachée ; jamais de catalogues non vérifiés (ClawHub, skills.sh…).
+5. **Installation** : choisis la boîte (Design : interface et visuel ; Dev : code, tests et sécurité ; Pilotage : organisation, produit, données, documentation ; Creatif : création, animation, 3D), ajoute la ligne dans `scripts/sources.txt` (mode `manuel` si l'outil ne doit servir que sur demande), `bash scripts/sync.sh`, mets à jour `README.md`, commit « Veille JJ/MM : ajout <nom> », push sur main.
+6. **Retraits** (au plus 3 par jour) : outil en double avec un meilleur, abandonné (aucun commit depuis 12 mois) ou remplacé par une version officielle → retrait selon `commun.md`, commit « Veille JJ/MM : retrait <nom> », document `choix` au statut `retire` pour la trace. Un outil cité dans la fiche (déroulé de travail par défaut) ou en mode `manuel` n'est jamais retiré directement : propose son retrait en option.
+7. **Compte rendu** : tableaux « Installés », « Options ajoutées » (avec le lien de la Boîte à choix), « Retirés », « Écartés » ; 15 lignes au plus.

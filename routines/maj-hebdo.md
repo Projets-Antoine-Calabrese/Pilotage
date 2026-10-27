@@ -1,0 +1,11 @@
+# Routine : Mise à jour et amélioration hebdo (lundi)
+
+Lis d'abord `routines/commun.md`. La sécurité est traitée par « Sécurité hebdo », les nouveaux outils par « Veille GitHub quotidienne ».
+
+1. **Démarrage** : vérifie la présence de `~/.claude/CLAUDE.md`, `~/.claude/skills/design-taste` et `~/.claude/hooks/outils-demarrage.sh`. S'il en manque un, mets-le dans le compte rendu.
+2. **Boîtes** (Design, Dev, Pilotage, Creatif) : clone, `bash scripts/sync.sh` (met à jour les outils depuis leurs sources approuvées), puis relis le diff complet. Annule toute mise à jour qui ajoute un hook, une exécution automatique, un téléchargement de consignes ou une demande de secret, ou qui change de licence, et explique pourquoi. Sinon : `README.md` à jour, commit « MAJ hebdo JJ/MM », push sur main.
+3. **Moule Modele-Projet** : `bash scripts/maj-outils.sh` ; s'il y a des changements, branche `claude/maj-JJMMAA` et PR brouillon.
+4. **Fiche et routines** : vérifie que `Pilotage/.claude/CLAUDE.md` et `routines/` restent justes (noms des conversations, dépôts, horaires, liens). Sinon, propose la correction en PR brouillon.
+5. **Applications** : tout dépôt de Projets-Antoine-Calabrese autre que Design, Dev, Pilotage, Creatif, Modele-Projet, Suivi et .github-private (list_repos). Pour chacune (add_repo accès push, clone profondeur 1) : ouvre-la dans Chromium sans écran (Playwright déjà installé), relève les erreurs de console et les fichiers qui ne se chargent pas, vérifie l'affichage à 390 px de large, lance les tests existants. Un problème simple et sans risque → branche `claude/maj-JJMMAA`, PR brouillon (problème, correction, comment vérifier), une seule par application et par semaine. Sinon, décris le problème et la solution sans rien modifier.
+6. **Conversations** : `list_sessions` (mine: true), hors conversations archivées. Signale celles qui sont bloquées, en échec, ou qui attendent Antoine depuis plus de 2 jours : titre et action précise. Une conversation de projet en phase maquette (sans dépôt) est normale, sauf si elle attend depuis plus de 2 jours. N'écris pas dans ces conversations.
+7. **Compte rendu** : « ✅ Boîtes », « 🐞 Bugs », « 🔧 PR brouillons ouvertes » (y compris celles des semaines précédentes), « 💬 Conversations en attente », « 🙋 Besoin de toi ». Termine par « Prochaine MAJ : lundi JJ/MM ».

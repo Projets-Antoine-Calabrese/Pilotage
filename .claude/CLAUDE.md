@@ -9,16 +9,22 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
 | Design, Dev, Pilotage, Creatif | Boîtes à outils de Claude (compétences, sous-agents) | **Publiques** : aucune donnée personnelle, jamais |
 | Modele-Projet | Moule (template) de tout nouveau projet | Privé |
 | Voyage, Finances, Sport-Sante, futurs projets | Applications | Privés |
+| Suivi | Comptes rendus des conversations automatiques, référence de sécurité, journal | Privé |
 | .github-private | Page d'accueil de l'organisation (`profile/README.md`) | Privé — Claude ne peut pas y écrire : donner le texte à Antoine |
 
 - Catalogues en ligne : composants `Design/references/composants.md`, bibliothèques créatives `Creatif/references/bibliotheques.md`, sources de données `Pilotage/references/donnees.md`, veille et sources écartées `Pilotage/references/veille.md` (lisibles sur GitHub, dépôts publics).
 - Environnement à utiliser : **AntoCala** (pas « Default », qui ne charge pas les boîtes). Si `~/.claude/skills/design-taste` est absent, le dire à Antoine.
 - Une conversation par projet. Rangement dans la barre latérale (les **sections** sont créées et remplies par Antoine ; Claude ne peut pas y ranger une conversation, et la barre n'affiche pas l'imbrication) :
-  - section « Gestion Claude Code » : « Cadrage utilisation Claude Code » (réglages d'ensemble), « Mise à jour et amélioration hebdo » (maintenance du lundi) et « Veille GitHub — améliorations » (recherche d'outils : elle propose, n'installe rien) ;
+  - section « Gestion Claude Code » : « Cadrage utilisation Claude Code » (conversation généraliste : réglages et toutes les demandes hors projet ; Antoine y écrit), puis 4 conversations **automatiques où Antoine n'écrit jamais** : « Veille GitHub quotidienne » (chaque jour 7 h 47), « Mise à jour et amélioration hebdo » (lundi 8 h 07), « Sécurité hebdo » (lundi 8 h 13), « Organisation du samedi » (samedi 8 h 21) ;
   - section « Applications » : « Template des nouveaux projets » (lanceur), puis chaque application (pivot) et ses sous-conversations « <Projet> — <chantier> ».
 - Liens entre conversations : Template crée la conversation pivot de chaque nouvelle application ; le pivot crée ses sous-conversations. (Exception : le pivot « Voyage » a été créé par « Cadrage utilisation Claude Code ».) Après chaque création, rappeler à Antoine de glisser la nouvelle conversation dans la section « Applications ».
-- **Économie de tokens (tous les projets)** : la conversation d'un projet est un *pivot* léger. Pour chaque chantier (design, pilotage, mise en ligne, amélioration, bugs…), elle crée **au moment où le chantier commence** (jamais d'avance : chaque démarrage coûte des tokens) une sous-conversation « <Projet> — <chantier> » (create_session, même dépôt, environnement AntoCala) avec une passation de 10 lignes maximum. La sous-conversation travaille sur sa propre branche, envoie un résumé de 5 lignes au pivot (send_message « @parent ») en fin de chantier, puis attend. Une conversation qui dépasse environ 300 000 tokens doit proposer à Antoine de repartir dans une conversation neuve.
-- Conversation « Mise à jour et amélioration hebdo » : chaque lundi 6 h 47, met à jour les boîtes, propose les nouveautés, vérifie la sécurité et les bugs de chaque application (corrections uniquement en PR brouillon, à valider par Antoine) et signale les conversations en attente. Pour ajouter ou retirer un outil, passer par elle (ou par la conversation « Cadrage utilisation Claude Code »), pas depuis un projet.
+- **Économie de tokens (tous les projets)** : la conversation d'un projet est un *pivot* léger. Pour chaque chantier (design, pilotage, mise en ligne, amélioration, bugs…), elle crée **au moment où le chantier commence** (jamais d'avance : chaque démarrage coûte des tokens) une sous-conversation « <Projet> — <chantier> » (create_session, même dépôt, environnement AntoCala) avec une passation de 10 lignes maximum. La sous-conversation travaille sur sa propre branche, envoie un résumé de 5 lignes au pivot (send_message « @parent ») en fin de chantier, puis attend. Une conversation de projet qui dépasse environ 300 000 tokens doit proposer à Antoine de repartir dans une conversation neuve. « Cadrage utilisation Claude Code » et les conversations automatiques se renouvellent seules au-delà de ce seuil (`routines/commun.md`) : Antoine n'a qu'à glisser la nouvelle conversation dans sa section.
+- **Conversations automatiques** : leur message programmé renvoie à leur routine, écrite dans `Pilotage/routines/` (`commun.md` + un fichier par conversation) ; pour changer une routine, PR brouillon que fusionne Antoine. Les choix d'Antoine passent par la page « Boîte à choix Claude Code » (https://claude.ai/artifact/7mFmde6P9MSBeCoESm2Jm4) : il coche, la conversation applique à son passage suivant. Comptes rendus copiés dans le dépôt privé Suivi.
+  - Veille : installe les bons outils d'éditeurs déjà approuvés, met les autres en option à cocher, retire les outils en double ou abandonnés.
+  - MAJ hebdo : met à jour les outils installés et le moule, corrige les bugs des applications en PR brouillon, signale les conversations en attente.
+  - Sécurité hebdo : GitHub (dépôts, accès, secrets, auteurs), Claude (tâches, environnements, connecteurs, démarrage, outils ajoutés), applications, alertes de sécurité reçues par e-mail (GitHub, Google, Anthropic). Alerte grave : notification sur le téléphone.
+  - Organisation du samedi : propose au plus 5 améliorations de l'organisation (dépôts, conversations, sections, automatisations, tokens), appliquées une fois cochées.
+- Ajouter ou retirer un outil : par la veille (automatique) ou par « Cadrage utilisation Claude Code », jamais depuis un projet.
 - Les boîtes sont rafraîchies au début de chaque conversation (routine `~/.claude/hooks/outils-demarrage.sh`) : ne pas la modifier sans l'accord d'Antoine.
 
 ## Démarrer un nouveau projet
@@ -43,7 +49,7 @@ Cadrer (`interview-me`, `write-spec`, `before-you-build`) → planifier (`planni
 
 ## Sécurité
 - Aucune donnée personnelle (chiffres, identités, e-mails, documents) dans les dépôts publics ; dans les projets privés, exemples anonymisés uniquement.
-- N'installer que des outils vérifiés : licence libre, auteur identifié, code relu ; jamais de catalogues non vérifiés (ClawHub, skills.sh…).
+- N'installer que des outils vérifiés : licence libre, auteur identifié, code relu ; jamais de catalogues non vérifiés (ClawHub, skills.sh…). Les outils de sécurité vont dans la boîte Dev.
 - Ne jamais contourner un blocage du système de sécurité : s'arrêter, expliquer à Antoine ce qui est bloqué et comment l'autoriser.
 - Ne jamais demander ni stocker de mot de passe ou de clé d'accès.
 - Les connecteurs Booking.com, lastminute.com et Spotify servent à la vie perso d'Antoine : ne pas les utiliser dans les projets sauf demande.
