@@ -16,7 +16,9 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
 - Une conversation par projet. Organisation dans la section « Gestion Claude Code » :
   - « Cadrage utilisation Claude Code » : réglages et organisation d'ensemble (boîtes, environnement, consignes) ;
   - « Mise à jour et amélioration hebdo » : maintenance automatique du lundi ;
-  - « Template des nouveaux projets » : lanceur de projets ; les conversations des applications (Voyage, Finances, Sport-Santé…) sont créées par lui et regroupées sous lui.
+  - « Template des nouveaux projets » : lanceur de projets ; les conversations des nouvelles applications sont créées par lui et rangées sous lui ;
+  - « Voyage » : rangée directement sous « Cadrage utilisation Claude Code ».
+- **Économie de tokens (tous les projets)** : la conversation d'un projet est un *pivot* léger. Pour chaque chantier (design, pilotage, amélioration, bugs…), elle crée une sous-conversation « <Projet> — <chantier> » (create_session, même dépôt, environnement AntoCala), rangée sous elle, avec une passation de 10 lignes maximum. La sous-conversation travaille sur sa propre branche, envoie un résumé de 5 lignes au pivot (send_message « @parent ») en fin de chantier, puis attend. Une conversation qui dépasse environ 300 000 tokens doit proposer à Antoine de repartir dans une conversation neuve.
 - Conversation « Mise à jour et amélioration hebdo » : chaque lundi 6 h 47, met à jour les boîtes, propose les nouveautés, vérifie la sécurité et les bugs de chaque application (corrections uniquement en PR brouillon, à valider par Antoine) et signale les conversations en attente. Pour ajouter ou retirer un outil, passer par elle (ou par la conversation « Cadrage utilisation Claude Code »), pas depuis un projet.
 - Les boîtes sont rafraîchies au début de chaque conversation (routine `~/.claude/hooks/outils-demarrage.sh`) : ne pas la modifier sans l'accord d'Antoine.
 
