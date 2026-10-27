@@ -10,6 +10,7 @@ Provenance exacte et commits dans `SOURCES.md`.
 | `.claude/agents/` | 13 sous-agents (produit, gestion de projet, experts métier) |
 | `.claude/CONNECTORS.md` | Correspondance des `~~outils` avec nos connecteurs (écrit à la main) |
 | `licenses/`, `scripts/` | Licences ; `sources.txt` + `sync.sh` |
+| `routines/` | Consignes des conversations automatiques (veille quotidienne, MAJ hebdo, sécurité hebdo, organisation du samedi), écrites à la main |
 
 ## Compétences
 | Usage | Compétences |
