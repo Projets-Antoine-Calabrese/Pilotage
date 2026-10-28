@@ -5,7 +5,8 @@
       "Bash(bash /home/user/dev/scripts/sync.sh)",
       "Bash(bash /home/user/pilotage/scripts/sync.sh)",
       "Bash(bash /home/user/creatif/scripts/sync.sh)",
-      "Bash(bash /home/user/modele-projet/scripts/maj-outils.sh)"
+      "Bash(bash /home/user/modele-projet/scripts/maj-outils.sh)",
+      "mcp__claude-code-remote__add_repo"
     ]
   },
   "hooks": {
