@@ -42,3 +42,8 @@
 | ralph-loop | Boucles coûteuses en tokens |
 | Serena | Pensé pour de gros projets de code |
 | claude-code-ui-ux-skill | Doublon d'ui-ux-pro-max |
+| anthropics/claude-plugins-official (receipts) | Doublon de session-report, installé le 28/10/26 (veille du 28/10/26) |
+| anthropics/claude-plugins-official (hookify) | Installe des hooks : contrôle raté (veille du 28/10/26) |
+| anthropics/claude-plugins-official (code-modernization) | Pensé pour de vieux logiciels d'entreprise ; hooks et télémétrie (veille du 28/10/26) |
+| anthropics/claude-plugins-official (commit-commands) | Doublon de ce que Claude Code fait déjà seul (veille du 28/10/26) |
+| anthropics/claude-plugins-official (cwc-makers, mcp-tunnels) | Matériel ou serveurs qu'Antoine n'utilise pas (veille du 28/10/26) |
