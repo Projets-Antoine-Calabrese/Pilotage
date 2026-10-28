@@ -20,6 +20,7 @@ Provenance exacte et commits dans `SOURCES.md`.
 | Retours et mesures | `synthesize-research`, `metrics-review` |
 | Données | `explore-data`, `analyze`, `statistical-analysis`, `validate-data`, `build-dashboard` |
 | Finance | `risk-metrics-calculation` (volatilité, Sharpe, perte maximale d'un portefeuille) |
+| Méthodes de travail de Claude | `claude-automation-recommender` (propose des automatisations pour un dépôt, officiel Anthropic), `session-report` (rapport de consommation de tokens, officiel Anthropic), `/handoff` (passation entre conversations), `/to-questionnaire` (questionnaire à faire remplir) |
 
 ## Sous-agents
 `product-manager`, `product-sprint-prioritizer`, `product-feedback-synthesizer`, `product-behavioral-nudge-engine` (habitudes, motivation), `project-manager-senior`, `project-management-experiment-tracker`.

@@ -11,3 +11,6 @@ msitarzewski/agency-agents | project-management | .claude/agents | project-manag
 msitarzewski/agency-agents | finance | .claude/agents | finance-financial-analyst finance-tax-strategist finance-investment-researcher finance-fpa-analyst
 msitarzewski/agency-agents | specialized | .claude/agents | loan-officer-assistant real-estate-buyer-seller
 msitarzewski/agency-agents | healthcare | .claude/agents | healthcare-clinical-evidence-agent
+anthropics/claude-plugins-official | plugins/claude-code-setup/skills | .claude/skills | claude-automation-recommender
+anthropics/claude-plugins-official | plugins/session-report/skills | .claude/skills | session-report
+mattpocock/skills | skills/productivity | .claude/skills | handoff to-questionnaire
