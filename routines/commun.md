@@ -9,10 +9,15 @@ Validées par Antoine le 27/10/26. Ces fichiers (`routines/`, sur la branche mai
 
 ## Boîte à choix Claude Code
 - Page : https://claude.ai/artifact/7mFmde6P9MSBeCoESm2Jm4. Données : outil `ArtifactData` (chargé via ToolSearch), `url` = cette page, collection `choix`.
-- Un document par proposition. `doc_id` : `AAAAMMJJ-<nom-court>` (lettres, chiffres, tirets). Champs : `titre`, `origine` (veille | organisation), `domaine` (code, dev, sécurité, pilotage, créativité, design, général, organisation), `utilite`, `avantages`, `inconvenients`, `editeur`, `licence`, `source` (lien https), `date` (AAAA-MM-JJ), `statut`, `note`.
-- Statuts : `propose` (créé par toi) → `coche` (Antoine) → `fait` ou `echec` (toi, avec une `note` d'une phrase) ; `refuse` (Antoine) ; `retire` (toi, outil retiré).
+- Un document par proposition. `doc_id` : `AAAAMMJJ-<nom-court>` (lettres, chiffres, tirets). Champs : `titre`, `origine` (veille, organisation, ou le titre de la conversation qui pose la question, par exemple « Voyage — Design »), `session` (identifiant de cette conversation, sauf pour veille et organisation), `domaine` (code, dev, sécurité, pilotage, créativité, design, général, organisation), `utilite`, `avantages`, `inconvenients`, `editeur`, `licence`, `source` (lien https), `date` (AAAA-MM-JJ), `statut`, `note`.
+- Statuts : `propose` (créé par toi) → `coche` (Antoine) → `transmis` (la veille l'a envoyé à la conversation concernée) → `fait` ou `echec` (avec une `note` d'une phrase) ; `refuse` (Antoine) ; `retire` (outil retiré).
+- Une case cochée vaut accord d'Antoine. Une conversation qui reçoit un message de transmission relit d'abord le document dans la Boîte : elle n'applique que s'il est bien au statut `coche` ou `transmis`.
+- **Demandes de fusion** : collection `fusions`, un document par PR ouverte de l'organisation (`doc_id` : `<depot>-<numero>`). Champs : `depot`, `numero`, `titre`, `resume` (une phrase simple), `lien`, `date`, `statut` (`a_valider`, puis `fusionne` ou `fermee`). C'est Antoine qui fusionne, depuis le lien.
 - Avant d'ajouter : pas de doublon (même titre ou même source), et ne repropose jamais un élément `refuse`. Écris toujours avec `if_version` (lu juste avant). Utilise `batch` dès qu'il y a plus de 2 écritures.
 - Texte des fiches : français simple, une phrase par champ, sans jargon.
+
+## Mode économie
+- Au début du passage : `get_session` sans identifiant. Si `external_metadata.rate_limit_info.status` n'est pas `allowed` (par exemple `allowed_warning`), le compte d'Antoine approche de sa limite : fais la **version courte** de ta routine (indiquée dans chaque routine) et commence le compte rendu par « Mode économie ».
 
 ## Git
 - **Boîtes Design, Dev, Pilotage, Creatif** : ajouter, mettre à jour ou retirer un outil = modifier `scripts/sources.txt`, lancer `bash scripts/sync.sh` (pour un retrait, supprimer aussi le dossier ou fichier copié et sa licence si plus utilisée), mettre à jour `README.md` (et `references/veille.md` pour la veille), commit, push direct sur main. Avant le push : `git pull --rebase origin main` (une autre conversation a pu pousser).
