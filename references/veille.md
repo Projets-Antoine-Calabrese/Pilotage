@@ -47,3 +47,8 @@
 | anthropics/claude-plugins-official (code-modernization) | Pensé pour de vieux logiciels d'entreprise ; hooks et télémétrie (veille du 28/10/26) |
 | anthropics/claude-plugins-official (commit-commands) | Doublon de ce que Claude Code fait déjà seul (veille du 28/10/26) |
 | anthropics/claude-plugins-official (cwc-makers, mcp-tunnels) | Matériel ou serveurs qu'Antoine n'utilise pas (veille du 28/10/26) |
+| trailofbits/skills (supply-chain-risk-auditor) | Ne lit que les fichiers de paquets ; nos applis chargent leurs bibliothèques par CDN (veille du 29/10/26) |
+| ibelick/ui-skills (create-design-md) | Lance `npx @google/design.md` sans version fixée à chaque usage (veille du 29/10/26) |
+| anthropics/skills (brand-guidelines, internal-comms, slack-gif-creator) | Marque Anthropic, communication d'entreprise, Slack : hors de nos usages (veille du 29/10/26) |
+| anthropics/skills (pdf, docx, xlsx, pptx, skill-creator, claude-api) | Déjà fournis d'office dans Claude Code (veille du 29/10/26) |
+| anthropics/claude-plugins-official (agent-sdk-dev, mcp-server-dev, plugin-dev, *-lsp, math-*, *-output-style) | Développement d'agents ou de plugins, langages compilés, mathématiques ou styles de réponse : hors de nos usages (veille du 29/10/26) |
