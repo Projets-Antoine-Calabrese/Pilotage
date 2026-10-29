@@ -7,12 +7,13 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
 | Dépôt | Rôle | Visibilité |
 |---|---|---|
 | Design, Dev, Pilotage, Creatif | Boîtes à outils de Claude (compétences, sous-agents) | **Publiques** : aucune donnée personnelle, jamais |
-| Modele-Projet | Moule (template) de tout nouveau projet | Privé |
+| Modele-Projet | Moule (template) de tout nouveau projet : fiche, tâches, docs, `scripts/maj-outils.sh` ; **aucune copie des boîtes** | Privé |
 | Voyage, Finances, Sport-Sante, futurs projets | Applications | Privés |
 | Suivi | Comptes rendus des conversations automatiques, référence de sécurité, journal | Privé |
 | .github-private | Page d'accueil de l'organisation (`profile/README.md`) | Privé — Claude ne peut pas y écrire : donner le texte à Antoine |
 
 - Catalogues en ligne : composants `Design/references/composants.md`, bibliothèques créatives `Creatif/references/bibliotheques.md`, sources de données `Pilotage/references/donnees.md`, veille et sources écartées `Pilotage/references/veille.md` (lisibles sur GitHub, dépôts publics).
+- **Jamais de copie des boîtes dans un dépôt de projet** (ni `.claude/skills`, `agents`, `commands`, `references`) : les outils vivent dans `~/.claude/` (cloud : démarrage AntoCala ; ordinateur : `bash scripts/maj-outils.sh`). Une copie alourdit le dépôt (25 Mo), charge chaque outil deux fois (tokens) et vieillit sans mise à jour. Un dépôt de projet ne garde dans `.claude/` que ce qui lui est propre.
 - Environnement à utiliser : **AntoCala** (pas « Default », qui ne charge pas les boîtes). Si `~/.claude/skills/design-taste` est absent, le dire à Antoine.
 - Une conversation par projet. Rangement dans la barre latérale (les **sections** sont créées et remplies par Antoine ; Claude ne peut pas y ranger une conversation, et la barre n'affiche pas l'imbrication) :
   - section « Gestion Claude Code » : « Cadrage utilisation Claude Code » (conversation généraliste : réglages et toutes les demandes hors projet ; Antoine y écrit), puis 4 conversations **automatiques où Antoine n'écrit jamais** : « Veille GitHub quotidienne » (chaque jour 7 h 47), « Mise à jour et amélioration hebdo » (lundi 8 h 07), « Sécurité hebdo » (lundi 9 h 47, après la veille et la MAJ : double contrôle), « Organisation du samedi » (samedi 8 h 21) ;
