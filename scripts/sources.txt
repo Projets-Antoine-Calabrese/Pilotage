@@ -14,3 +14,4 @@ msitarzewski/agency-agents | healthcare | .claude/agents | healthcare-clinical-e
 anthropics/claude-plugins-official | plugins/claude-code-setup/skills | .claude/skills | claude-automation-recommender
 anthropics/claude-plugins-official | plugins/session-report/skills | .claude/skills | session-report
 mattpocock/skills | skills/productivity | .claude/skills | handoff to-questionnaire
+Projets-Antoine-Calabrese/Pilotage | agents-maison | .claude/agents | *
