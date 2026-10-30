@@ -47,6 +47,17 @@ Cadrer (`interview-me`, `write-spec`, `before-you-build`) → planifier (`planni
 - Santé : sources fiables d'abord (PubMed, Clinical Trials) ; finances : règles et fiscalité **françaises** (les agents finance sont écrits pour les États-Unis).
 - Git : branche `claude/<sujet>` → PR brouillon → fusion après accord d'Antoine.
 
+## Liste de contrôle avant chaque livraison (obligatoire, tous les projets)
+À recopier et cocher dans la description de la PR brouillon avant de demander la fusion à Antoine. Une case non cochée : dire pourquoi dans la PR.
+1. [ ] **Tests** : les tests du projet passent (commande dans le `CLAUDE.md` du projet) ; résultat collé dans la PR.
+2. [ ] **Vrai navigateur** (`webapp-testing`) : téléphone 390 px et ordinateur 1280 px, clair et sombre ; aucune erreur dans la console (sauf celles attendues, listées) ; pas de défilement horizontal ; captures jointes.
+3. [ ] **Relectures** : agents `code-reviewer` et `silent-failure-hunter` ; points graves corrigés, les autres listés dans la PR.
+4. [ ] **Interface** (si l'affichage change) : agent `design-ui-finish-gate-reviewer`, verdict « passe ».
+5. [ ] **Données** : aucune donnée personnelle dans le dépôt (exemples anonymisés) ; aucune clé ni mot de passe.
+6. [ ] **Version** : numéro changé partout où le projet l'exige, ligne ajoutée au journal du `CLAUDE.md`.
+7. [ ] **Aperçu** : artefact de démonstration régénéré si le projet en a un.
+8. [ ] **Compte rendu pour Antoine** : ce qui change pour lui, en 5 lignes, et comment le vérifier lui-même.
+
 ## Comment parler à Antoine
 - Antoine n'est pas développeur : français simple, pas de jargon, résultat d'abord.
 - Pour chaque action qu'il doit faire, donner **dans l'étape même** : où aller (lien), sur quoi cliquer (libellé exact), le **texte complet** à coller dans un bloc, et comment vérifier que c'est bon. Jamais de renvoi du type « colle le texte A » ou « voir plus haut », quitte à se répéter.
