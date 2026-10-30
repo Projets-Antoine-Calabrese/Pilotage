@@ -7,7 +7,7 @@ Provenance exacte et commits dans `SOURCES.md`.
 |---|---|
 | `.claude/skills/` | 15 compétences |
 | `references/` | `donnees.md` (sources de données : finances, sport, nutrition, données publiques), `veille.md` (où chercher de nouveaux outils, connecteurs à envisager, sources écartées) |
-| `.claude/agents/` | 13 sous-agents (produit, gestion de projet, experts métier) |
+| `.claude/agents/` | 15 sous-agents (produit, gestion de projet, agents maison, experts métier) |
 | `.claude/CONNECTORS.md` | Correspondance des `~~outils` avec nos connecteurs (écrit à la main) |
 | `licenses/`, `scripts/` | Licences ; `sources.txt` + `sync.sh` |
 | `routines/` | Consignes des conversations automatiques (veille lundi-mercredi-vendredi, MAJ hebdo, sécurité hebdo, organisation du samedi), écrites à la main |

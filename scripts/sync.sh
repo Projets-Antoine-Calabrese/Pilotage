@@ -12,7 +12,7 @@ grep -vE '^\s*(#|$)' "$ROOT/scripts/sources.txt" | while IFS='|' read -r repo sr
   dir="$TMP/${repo//\//_}"
   [ -d "$dir" ] || git clone -q --depth 1 "https://github.com/$repo" "$dir"
   sha=$(git -C "$dir" rev-parse --short HEAD)
-  lic=$(ls "$dir" | grep -iE '^licen[cs]e' | head -1 || true)
+  lic=$(find "$dir" -maxdepth 1 -type f -iname 'licen[cs]e*' -printf '%f\n' | head -1 || true)
   mkdir -p "$ROOT/$dst"
   if [ "$items" = "*" ]; then list=$(ls "$dir/$src"); else list=$items; fi
   set +f; n=0

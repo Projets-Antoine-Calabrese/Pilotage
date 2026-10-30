@@ -1,6 +1,6 @@
 # Provenance des fichiers copiés
 
-Généré par `scripts/sync.sh` le 2026-10-28. Ne pas modifier ces copies à la main.
+Généré par `scripts/sync.sh` le 2026-10-30. Ne pas modifier ces copies à la main.
 
 | Source | Commit | Copié vers | Éléments | Licence |
 |---|---|---|---|---|
@@ -18,4 +18,5 @@ Généré par `scripts/sync.sh` le 2026-10-28. Ne pas modifier ces copies à la 
 | [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | `b37b5bb` | `.claude/agents` | 1 | LICENSE |
 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | `f8c5e7a` | `.claude/skills` | 1 | LICENSE |
 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | `f8c5e7a` | `.claude/skills` | 1 | LICENSE |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | `59db609` | `.claude/skills` | 2 | LICENSE |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | `a496f55` | `.claude/skills` | 2 | LICENSE |
+| [Projets-Antoine-Calabrese/Pilotage](https://github.com/Projets-Antoine-Calabrese/Pilotage) | `991599e` | `.claude/agents` | 2 | aucune |
