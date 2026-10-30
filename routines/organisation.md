@@ -2,6 +2,7 @@
 
 But : améliorer chaque semaine l'organisation d'ensemble : dépôts et projets GitHub, conversations et sections de la barre latérale, automatisations, coût en tokens. Lis d'abord `routines/commun.md`.
 
+0. **Ordre du jour** (demande d'Antoine du 30/10/26) : lis `ordre-du-jour.md` du dépôt privé Suivi (add_repo accès push, clone profondeur 1). Traite d'abord les points prévus pour ce jour : ce sont des demandes d'Antoine. Puis déplace-les dans « Traités » avec la date et une ligne de résultat (push direct sur main). Fichier absent ou rien pour ce jour : passe à la suite.
 1. **Cases cochées** : dans la collection `choix`, pour chaque document `origine: organisation` au statut `coche` :
    - ce que Claude peut faire, fais-le : fiche ou routines par PR brouillon ; conversations (créer, renommer, archiver une conversation terminée) ; tâches programmées ;
    - ce qui demande Antoine (créer un dépôt, régler GitHub ou claude.ai, ranger une conversation dans une section) : donne les étapes complètes dans « 🙋 Besoin de toi ».
