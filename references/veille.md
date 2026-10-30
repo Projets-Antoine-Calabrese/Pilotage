@@ -52,3 +52,8 @@
 | anthropics/skills (brand-guidelines, internal-comms, slack-gif-creator) | Marque Anthropic, communication d'entreprise, Slack : hors de nos usages (veille du 29/10/26) |
 | anthropics/skills (pdf, docx, xlsx, pptx, skill-creator, claude-api) | Déjà fournis d'office dans Claude Code (veille du 29/10/26) |
 | anthropics/claude-plugins-official (agent-sdk-dev, mcp-server-dev, plugin-dev, *-lsp, math-*, *-output-style) | Développement d'agents ou de plugins, langages compilés, mathématiques ou styles de réponse : hors de nos usages (veille du 29/10/26) |
+| t3dotgg/tstack | S'appuie sur Codex (council, full-send) ; le reste double le suivi de PR déjà fait par Claude Code (veille du 30/10/26) |
+| mattpocock/skills (implement-spec) | Doublon de spec-driven-development et incremental-implementation (veille du 30/10/26) |
+| abdiraimov-otabek/dashboard-design-skill | Doublon de kpi-dashboard-design, build-dashboard et dataviz ; pensé pour Tailwind (veille du 30/10/26) |
+| OthmanAdi/planning-with-files, thedotmack/claude-mem | Installent des hooks qui réinjectent du contexte à chaque tour : contrôle raté (veille du 30/10/26) |
+| anthropics/skills (mcp-builder) | Création de serveurs MCP : hors de nos usages (veille du 30/10/26) |
