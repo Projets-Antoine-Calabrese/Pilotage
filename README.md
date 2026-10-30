@@ -10,7 +10,8 @@ Provenance exacte et commits dans `SOURCES.md`.
 | `.claude/agents/` | 13 sous-agents (produit, gestion de projet, experts métier) |
 | `.claude/CONNECTORS.md` | Correspondance des `~~outils` avec nos connecteurs (écrit à la main) |
 | `licenses/`, `scripts/` | Licences ; `sources.txt` + `sync.sh` |
-| `routines/` | Consignes des conversations automatiques (veille quotidienne, MAJ hebdo, sécurité hebdo, organisation du samedi), écrites à la main |
+| `routines/` | Consignes des conversations automatiques (veille lundi-mercredi-vendredi, MAJ hebdo, sécurité hebdo, organisation du samedi), écrites à la main |
+| `agents-maison/` | Sous-agents écrits pour Antoine (écrits à la main ici, installés dans `.claude/agents/` par `scripts/sources.txt` + `sync.sh`) |
 
 ## Compétences
 | Usage | Compétences |
@@ -24,6 +25,12 @@ Provenance exacte et commits dans `SOURCES.md`.
 
 ## Sous-agents
 `product-manager`, `product-sprint-prioritizer`, `product-feedback-synthesizer`, `product-behavioral-nudge-engine` (habitudes, motivation), `project-manager-senior`, `project-management-experiment-tracker`.
+
+## Agents maison
+| Agent | Rôle |
+|---|---|
+| `verificateur-livraison` | Avant chaque PR d'une appli : test dans un vrai navigateur (téléphone et ordinateur, parcours, données, export/import), verdict PRÊT / PAS PRÊT avec preuves |
+| `auditeur-securite-appli` | Audit en lecture seule d'une appli HTML : secrets, données perso, bibliothèques CDN, injections, import JSON, stockage local |
 
 ## Experts métier
 | Domaine | Sous-agents |
@@ -53,5 +60,5 @@ Elle décrit l'organisation, le démarrage d'un projet, le déroulé de travail,
 
 ## Autorisations (`.claude/settings.json`)
 Ce fichier est recopié par le script de démarrage dans `~/.claude/settings.json` de **toutes** les conversations AntoCala.
-Il déclare la routine de démarrage (`hooks` → `SessionStart`) et autorise uniquement les scripts de mise à jour des boîtes (`scripts/sync.sh` de Design, Dev, Pilotage, Creatif et `scripts/maj-outils.sh` de Modele-Projet), lancés à leur emplacement habituel, pour que la mise à jour du lundi ne soit pas bloquée.
+Il déclare la routine de démarrage (`hooks` → `SessionStart`), les garde-fous automatiques (`hooks` → `PreToolUse`, script `.claude/hooks/garde-fous.sh` : pas de modification à la main des copies d'outils, pas de clé, IBAN, téléphone ou e-mail personnel envoyé vers une boîte publique) et autorise uniquement les scripts de mise à jour des boîtes (`scripts/sync.sh` de Design, Dev, Pilotage, Creatif et `scripts/maj-outils.sh` de Modele-Projet), lancés à leur emplacement habituel, pour que la mise à jour du lundi ne soit pas bloquée.
 N'y ajouter que des autorisations précises et sans risque : elles s'appliquent partout.

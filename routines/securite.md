@@ -13,7 +13,7 @@ But : vérifier que tout est sous contrôle (pas de piratage, pas de fuite, pas 
    e. Boîtes publiques : aucune donnée personnelle (e-mails, téléphones, montants, noms réels, documents).
    f. PR et branches ouvertes par un inconnu.
 2. **Claude** :
-   a. Tâches programmées (`list_triggers`) : attendues, la veille quotidienne, la MAJ hebdo, la sécurité hebdo, l'organisation du samedi, plus les rendez-vous ponctuels créés par les conversations d'Antoine. Une tâche inconnue est une alerte.
+   a. Tâches programmées (`list_triggers`) : attendues, la veille (lundi, mercredi, vendredi), la MAJ hebdo, la sécurité hebdo, l'organisation du samedi, plus les rendez-vous ponctuels créés par les conversations d'Antoine. Une tâche inconnue est une alerte.
    b. Environnements (`list_environments`) : AntoCala, Default et l'environnement local du PC d'Antoine. Tout autre est un écart.
    c. Conversations de la semaine (`list_sessions`, mine: true) : origine inconnue ou titre suspect.
    d. Connecteurs (`ListConnectors` via ToolSearch, si disponible), comparés à la référence.
