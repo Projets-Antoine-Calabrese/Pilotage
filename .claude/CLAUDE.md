@@ -19,9 +19,10 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
   1. « Chefferie de projet » : « Cadrage utilisation Claude Code » seule (stratégie, organisation, règles, demandes hors projet, lancement des nouveaux projets ; Antoine y écrit) ;
   2. « Agents IA » : les passages des 3 routines automatiques (Antoine n'y écrit jamais) ;
   3. « Applications » : une seule conversation par application active, nommée « <Projet> » ;
-  4. « Cloud » : petits outils ponctuels en artefact, une conversation chacun.
-  Le rangement passe par les étiquettes de conversation (`set_session_tags`, étiquette = nom exact de la section) ; si la section n'apparaît pas, Antoine glisse la conversation à la main.
-- **Zéro imbrication** (décision d'Antoine du 30/10/26) : jamais de sous-conversation. `create_session` est interdit, car il range la nouvelle conversation sous celle qui la crée et l'arbre se perd à chaque renouvellement. Pour ouvrir une conversation à plat (application, remplaçante, petit outil) : tâche ponctuelle `create_trigger` avec `create_new_session_on_fire: true`, `run_once_at` = dans 2 minutes, environnement AntoCala, `initiation: human_request` ou `own_followup`, et un message de départ complet (le projet, le dépôt, « lis `TASKS.md` »). Puis lui mettre l'étiquette de sa section. Les étapes internes d'un chantier passent par des **sous-agents** (outil Agent) dans la même conversation : ils gardent son historique petit.
+  4. « Cloud » : petits projets (voir ci-dessous), une conversation chacun.
+  Le rangement est **manuel** : les étiquettes (`set_session_tags`) ne rangent pas dans les sections de la barre (test du 30/10/26). Claude n'étiquette rien ; Antoine glisse chaque nouvelle conversation dans sa section.
+- **Section « Cloud »** (précisée par Antoine le 30/10/26) : un petit projet, un outil ponctuel ou un projet presque fini, qui n'a pas besoin de dépôt ni de plusieurs chantiers. **Une seule conversation** fait tout (souvent un artefact claude.ai), nommée comme l'outil, sans passation ni phases. Elle suit les règles d'une application (fin de vie à 300 000 tokens, économie du forfait). **Passage vers « Applications »** dès qu'un critère est vrai : un dépôt GitHub devient nécessaire, plusieurs chantiers se succèdent, ou la conversation dépasse 300 000 tokens ; Cadrage ouvre alors la conversation « <Projet> » à plat avec un `TASKS.md`.
+- **Zéro imbrication** (décision d'Antoine du 30/10/26) : jamais de sous-conversation. `create_session` est interdit, car il range la nouvelle conversation sous celle qui la crée et l'arbre se perd à chaque renouvellement. Pour ouvrir une conversation à plat (application, remplaçante, petit outil) : tâche ponctuelle `create_trigger` avec `create_new_session_on_fire: true`, `run_once_at` = dans 2 minutes, environnement AntoCala, `initiation: human_request` ou `own_followup`, et un message de départ complet (le projet, le dépôt, « lis `TASKS.md` »). Antoine la glisse ensuite dans sa section. Les étapes internes d'un chantier passent par des **sous-agents** (outil Agent) dans la même conversation : ils gardent son historique petit.
 - **Une application = une conversation** (décision d'Antoine du 30/10/26, mode « Sponsor ») : la mémoire du projet est dans son dépôt (`TASKS.md` : état, décisions, prochaine étape ; `CLAUDE.md` : règles du projet), pas dans l'historique de la conversation. Elle enchaîne seule :
   1. **plan** de 10 lignes au plus et maquette rapide en artefact ;
   2. **un seul arrêt** : Antoine valide le plan et la maquette (AskUserQuestion) ;
@@ -44,8 +45,20 @@ Source : `Pilotage/.claude/CLAUDE.md`. Ne la modifier que là, avec l'accord d'A
 - Ajouter ou retirer un outil : par « Veille et mises à jour » (automatique) ou par « Cadrage utilisation Claude Code », jamais depuis un projet.
 - Les boîtes sont rafraîchies au début de chaque conversation (routine `~/.claude/hooks/outils-demarrage.sh`) : ne pas la modifier sans l'accord d'Antoine.
 
+## Ligne de conduite tokens
+Constat du 31/10/26 : le coût vient surtout de la relecture de l'historique (ex. « Évolution simulateur d'impôt » : 8,3 M de tokens relus en cache pour 364 000 en contexte, 7,5 $), pas de ce qu'on écrit.
+1. **Un seul chantier actif**, une conversation par sujet ; réveiller une conversation inactive depuis plus d'1 h relit tout son historique.
+2. **Contexte court** : au-delà de 300 000 tokens, état écrit dans `TASKS.md` puis conversation neuve ; ne pas viser 1 million.
+3. **Sous-agents** (outil Agent) pour lire, chercher ou tester : seul le résumé revient dans la conversation.
+4. **Lire peu** : fichiers par plages (`offset`/`limit`), recherches ciblées (Grep), pas de fichier entier ni de log complet.
+5. **Pas d'attente active** : ni rappel, ni sondage, ni surveillance de PR ; une conversation qui attend Antoine s'arrête.
+6. **Effort et modèle proportionnés** : moyen pour la veille et le samedi, élevé pour la sécurité et le code complexe.
+7. **Un message complet** plutôt que cinq courts ; réponses d'Antoine regroupées.
+8. **Outils rares à la demande** : pas de nouvelle compétence installée sans gain net (chaque outil est chargé à chaque message).
+9. **Mesurer** : `get_session` (`usage.cost_usd`, `context_usage.used_tokens`) dans le compte rendu du lundi pour les 3 plus gros consommateurs.
+
 ## Démarrer un nouveau projet
-Antoine écrit son idée dans **« Cadrage utilisation Claude Code »**. Cadrage ouvre aussitôt la conversation « <Projet> » à plat (tâche ponctuelle, voir « Zéro imbrication »), étiquette « Applications », avec un message de départ qui reprend l'idée. Étapes :
+Antoine écrit son idée dans **« Cadrage utilisation Claude Code »**. Cadrage ouvre aussitôt la conversation « <Projet> » à plat (tâche ponctuelle, voir « Zéro imbrication »), qu'Antoine glisse dans « Applications », avec un message de départ qui reprend l'idée. Étapes :
 1. **Plan et maquette** : la conversation du projet écrit le plan (10 lignes) et une maquette en artefact claude.ai (page HTML privée, pile par défaut ci-dessous), puis s'arrête une seule fois pour la validation d'Antoine.
 2. Après validation, Antoine crée le dépôt depuis le moule, avec le lien pré-rempli qu'elle lui donne : https://github.com/new?template_owner=Projets-Antoine-Calabrese&template_name=Modele-Projet&owner=Projets-Antoine-Calabrese&name=<Nom>&visibility=private → **Create repository**. (Claude ne peut pas créer de dépôt ni modifier les réglages GitHub.)
 3. Elle branche le dépôt (add_repo, accès push), remplit `CLAUDE.md` du projet (objectif, public, « fini » quand…), `TASKS.md` et `scripts/verifier.sh`, puis enchaîne seule jusqu'à la PR finale (voir « Une application = une conversation »), mise en ligne comprise si elle fait partie du plan validé.
