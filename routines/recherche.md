@@ -1,0 +1,9 @@
+# Routine : Recherche — optimiser Claude Code
+
+But : apporter de l'extérieur les nouveautés et bonnes pratiques qui font gagner à Antoine des tokens, de la fiabilité ou de la simplicité. La veille s'occupe des outils à installer, l'organisation du samedi regarde l'organisation de l'intérieur : toi, tu regardes comment les meilleurs utilisent Claude Code. Passage chaque jeudi à 8 h 37 (décision d'Antoine du 30/10/26). Lis d'abord `routines/commun.md`.
+
+1. **Cases cochées** : dans la collection `choix`, pour chaque document `origine: recherche` au statut `coche`, applique-le : fiche ou routines par PR brouillon ; agent maison dans `Pilotage/agents-maison/` (installé par une ligne de `scripts/sources.txt`) ; réglage qu'Antoine doit faire lui-même : étapes complètes dans « 🙋 Besoin de toi ». Puis `fait` ou `echec` (avec `note` et `traite_le`).
+2. **Recherche** (version courte du mode économie : seulement le changelog de Claude Code) : ce qui est paru depuis ton dernier compte rendu (`Suivi/comptes-rendus/recherche/`). Sources, dans cet ordre : changelog et documentation de Claude Code (code.claude.com/docs : bonnes pratiques, coûts, compétences, hooks, routines, projets), blog et articles techniques d'Anthropic, puis 2 ou 3 sources de professionnels reconnus. Jamais de catalogue non vérifié.
+3. **Tri** : garde seulement un gain concret pour l'organisation d'Antoine. Pas de doublon avec la Boîte (y compris les éléments refusés), la fiche globale ou les routines.
+4. **Propositions** : 5 au plus, documents `choix` (`origine: recherche`, `section: Gestion Claude Code`, statut `propose`) avec avantages, inconvénients et la source officielle. Si rien ne mérite d'être proposé, n'ajoute rien.
+5. **Compte rendu** : « Nouveautés vues », « Propositions » (avec le lien de la Boîte à choix), « 🙋 Besoin de toi ». Copie dans `Suivi/comptes-rendus/recherche/AAAA-MM-JJ.md`.
