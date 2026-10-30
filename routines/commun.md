@@ -5,7 +5,7 @@ Validées par Antoine le 27/10/26, revues le 30/10/26 (routines sans mémoire). 
 
 ## Sans mémoire (décision d'Antoine du 30/10/26)
 - Chaque passage est une **conversation neuve**, ouverte par la tâche programmée. Ton état se lit dans le dépôt privé Suivi (tes derniers comptes rendus `comptes-rendus/<routine>/`, `ordre-du-jour.md`, `securite/reference.md`) et dans la Boîte à choix, jamais dans un historique.
-- Au début : range ta conversation dans la section « Agents IA » (`set_session_tags`, ajout de l'étiquette « Agents IA » sur ta session, identifiant donné par `get_session` sans identifiant), puis archive (`archive_session`) les passages précédents de ta routine encore ouverts (`list_sessions` avec `mine: true`, même titre, hors la tienne). Ne touche à aucune autre conversation.
+- Au début : archive (`archive_session`) les passages précédents de ta routine encore ouverts (`list_sessions` avec `mine: true`, même titre, hors la tienne). Ne touche à aucune autre conversation. Ne l'étiquette pas : le rangement dans la barre est manuel (Antoine glisse).
 - Fais ton travail, écris ton compte rendu dans Suivi, et arrête-toi net. Pas de renouvellement, pas de message à d'autres conversations (sauf alerte grave), pas de rappel programmé.
 
 ## Avant chaque passage

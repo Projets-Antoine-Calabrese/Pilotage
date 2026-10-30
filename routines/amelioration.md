@@ -4,7 +4,7 @@ But : améliorer chaque semaine l'organisation d'Antoine (dépôts, conversation
 
 0. **Ordre du jour** : lis `ordre-du-jour.md` du dépôt privé Suivi. Traite d'abord les points prévus pour ce jour : ce sont des demandes d'Antoine. Puis déplace-les dans « Traités » avec la date et une ligne de résultat (push direct sur main).
 1. **Cases cochées** : dans la collection `choix`, chaque document `origine` `amelioration`, `organisation` ou `recherche` au statut `coche` :
-   - ce que Claude peut faire, fais-le : fiche ou routines par PR brouillon ; agent maison dans `Pilotage/agents-maison/` ; tâches programmées ; conversations (archiver, ouvrir à plat selon la fiche, ranger par étiquette) ;
+   - ce que Claude peut faire, fais-le : fiche ou routines par PR brouillon ; agent maison dans `Pilotage/agents-maison/` ; tâches programmées ; conversations (archiver, ouvrir à plat selon la fiche) ;
    - ce qui demande Antoine (créer un dépôt, régler GitHub ou claude.ai) : étapes complètes dans « 🙋 Besoin de toi ».
    Puis `fait` ou `echec` (avec `note` et `traite_le`).
 2. **Nouveautés** depuis ton dernier compte rendu (`Suivi/comptes-rendus/amelioration/`) : changelog et documentation de Claude Code (code.claude.com/docs), blog et articles techniques d'Anthropic, puis 2 ou 3 sources de professionnels reconnus. Jamais de catalogue non vérifié.
