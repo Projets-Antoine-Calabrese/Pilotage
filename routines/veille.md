@@ -1,4 +1,4 @@
-# Routine : Veille et mises à jour (lundi et jeudi 7 h 47)
+# Routine : Veille & MAJ (lundi et jeudi 7 h 47)
 
 Passage le lundi et le jeudi depuis le 30/10/26 (choix d'Antoine) ; le lundi, elle fait aussi les mises à jour (partie « Lundi seulement »).
 
@@ -8,7 +8,7 @@ But : améliorer en continu les outils de Claude (code, développement, sécurit
 
 1. **Cases cochées** : dans la collection `choix`, pour chaque document `origine: veille` au statut `coche` : refais le contrôle (étape 4), installe (étape 5), puis passe-le en `fait`, ou en `echec` avec la raison dans `note`.
    - **Fusions cochées** : pour chaque document de `fusions` au statut `coche`, relis la PR (`pull_request_read`) : si elle est ouverte, sans conflit et sans contrôle en échec, passe-la en « prête » si elle est en brouillon, fusionne-la (`merge_pull_request`, méthode merge), puis statut `fusionne`. Sinon statut `bloque`, avec la raison dans `note`. Si la fusion est refusée par le contrôle de sécurité, statut `bloque` et signale-le dans le résumé du matin.
-   - **Liste des fusions** : ajoute à `fusions` (statut `a_valider`, avec une phrase simple dans `resume`) chaque PR ouverte des dépôts de l'organisation qui n'y est pas encore ; passe en `fusionne` ou `fermee` celles qui ne sont plus ouvertes.
+   - **Liste des fusions** : ajoute à `fusions` (statut `a_valider`, avec une phrase simple dans `resume`) chaque PR ouverte par une routine (branche `claude/veille-`, `claude/securite-` ou `claude/amelioration-`, voir `commun.md`) qui n'y est pas encore ; passe en `fusionne` ou `fermee` celles qui ne sont plus ouvertes.
 2. **Recherche** (version courte du mode économie : sauter les étapes 2, 3 et 6 ainsi que la partie « Lundi seulement » sauf L2 ; au plus 15 candidats examinés par passage, pour limiter les tokens ; les outils officiels Anthropic pas encore examinés passent en premier) : nouveautés des 7 derniers jours et pépites plus anciennes. Sources : celles de `Pilotage/references/veille.md` (officielles Anthropic d'abord), recherche GitHub par sujet, annonces des éditeurs. Ignore ce qui est déjà installé (`SOURCES.md` des 4 boîtes), écarté (`veille.md`) ou présent dans `choix`.
 3. **Tri** de chaque candidat :
    - **Officiel Anthropic** (dépôts `anthropics/*`, décision d'Antoine du 27/10/26) : installation directe, sans passer par les options, dès que l'outil sert nos domaines (code, dev, sécurité, pilotage, données, créativité, design, méthodes de travail de Claude) et passe le contrôle. Exclus : intégrations à des services qu'Antoine n'utilise pas, doublons d'un outil déjà installé. Licence non libre : option, avec les étapes pour qu'Antoine l'installe lui-même en plugin.
