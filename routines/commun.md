@@ -33,6 +33,6 @@ Validées par Antoine le 27/10/26, revues le 30/10/26 (routines sans mémoire). 
 
 ## Compte rendu
 - 10 lignes au plus, en français simple, avec des tableaux. Il commence par « <Nom de la routine> du JJ/MM/AA ». Si rien de neuf : une ligne.
-- Copie-le dans le dépôt privé `Projets-Antoine-Calabrese/Suivi` : `comptes-rendus/<routine>/AAAA-MM-JJ.md` (add_repo accès push, clone profondeur 1, push direct sur main). Si Suivi n'existe pas, signale-le dans « 🙋 Besoin de toi » et continue.
+- Copie-le dans le dépôt privé `Projets-Antoine-Calabrese/Suivi` : `comptes-rendus/<routine>/AAAA-MM-JJ.md` (add_repo accès push, clone profondeur 1, push direct sur main). Dans Suivi, n'envoie **que sur main** : ne pousse jamais ta branche de travail de session, même si la session en a désigné une (accord d'Antoine du 13/11/26 : ces branches s'accumulaient, une par passage). Dans Pilotage, ne pousse ta branche de travail que si elle porte une PR. Si Suivi n'existe pas, signale-le dans « 🙋 Besoin de toi » et continue.
 - Il finit par « 🙋 Besoin de toi » : pour chaque action d'Antoine, qu'il fait ailleurs que dans cette conversation : lien, libellé exact du bouton, texte complet à coller s'il y en a, comment vérifier que c'est bon. Sinon « Rien ».
 - **Alerte grave** (piratage possible, secret exposé, accès ou auteur inconnu) : mets-la en tête du compte rendu et envoie une notification au téléphone d'Antoine (outil `PushNotification`, via ToolSearch) en une phrase, sans détail sensible.
